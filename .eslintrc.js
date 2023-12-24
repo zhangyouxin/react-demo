@@ -1,20 +1,18 @@
 module.exports = {
-    parser: '@typescript-eslint/parser',
-    extends: [
-      'react-app',
-      'plugin:@typescript-eslint/recommended',
-      'prettier/@typescript-eslint',
-      'plugin:prettier/recommended',
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'prettier/prettier': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        extensions: ['.jsx', '.tsx'],
+      },
     ],
-    plugins: ['@typescript-eslint', 'react', 'prettier'],
-    rules: {
-      'prettier/prettier': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'off',
-      'react/jsx-filename-extension': [
-        'error',
-        {
-          extensions: ['.jsx', '.tsx'],
-        },
-      ],
-    },
-  };
+  },
+}
